@@ -1,30 +1,23 @@
-// 1行目は必ずpackage declaration
 package main
 
-import "fmt"
+import "log"
 
-// main()は引数を取らない
 func main(){
-	fmt.Println("hello, world")
+	var myString string
+	myString = "Green"
 
-	var whatToSay string
-	// 64bitのPCを使用しているので
-	var i int64
+	log.Println("my string is set to", myString)
 
-	whatToSay = "goodby cool world"
+	// ポインター渡し
+	changeUsingPointer(&myString)
 
-	fmt.Println(whatToSay)
-
-	i = 7
-
-	fmt.Println("i is set to ", i)
-
-	// 型指定のショートカット
-	whatWasSaid, theOtherThing := saySomething()
-
-	fmt.Println("the function returned", whatWasSaid, theOtherThing)
+	log.Println("after func call", myString)
 }
 
-func saySomething() (string, string) {
-	return "something", "else"
+// ポインターの概念（PHPの参照渡しのようなもの）
+func changeUsingPointer(s *string) {
+	log.Panicln("s is set to ", s)
+
+	newValue := "Red"
+	*s = newValue
 }
