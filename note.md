@@ -17,3 +17,8 @@
 # loopについて
 
 - forしかない（whileやforeachは無い）
+
+# interface
+
+- lesson14でやったが、implementは無い？
+    https://qiita.com/rtok/items/46eadbf7b0b7a1b0eb08
