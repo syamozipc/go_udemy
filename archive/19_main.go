@@ -5,6 +5,7 @@ import (
 	"log"
 )
 
+// テストセクション
 func main() {
 
 	result, err := divide(100.0, 0)
