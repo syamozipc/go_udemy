@@ -5,19 +5,34 @@ import (
 	"net/http"
 )
 
-//
+const portNumber = ":8080"
+
+// Home is the home page handler
+func Home(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "this is the home page")
+}
+
+// About is the about page handler
+func About(w http.ResponseWriter, r *http.Request) {
+	sum := addvalues(2, 2)
+	_, _ = fmt.Fprintf(w, "this is the about page and 2 + 2 is %d", sum)
+}
+
+// addValues adds two integers and return the sum
+func addvalues(x, y int) int {
+	return x + y
+}
+
+// main application function
 func main() {
 	// http requestを受け取った際に実行される処理
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-		n, err := fmt.Fprintf(w,"hello world!")
-		if err != nil {
-			fmt.Println(err)
-		}
+	// ブラウザで http://localhost:8080 にアクセスすると実行される
+	http.HandleFunc("/", Home)
+	http.HandleFunc("/about", About)
 
-		fmt.Println(fmt.Sprintf("Number of bytes written: %d", n))
-	})
+	fmt.Printf("starting application on port %s", portNumber)
 
 	// serverを http://localhost:8080 に立ち上げる
 	// 引数を_にすることで、errorがreturnされた場合、それをスルーする
-	_ = http.ListenAndServe(":8080", nil)
+	_ = http.ListenAndServe(portNumber, nil)
 }
