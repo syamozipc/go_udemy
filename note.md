@@ -22,3 +22,15 @@
 
 - lesson14でやったが、implementは無い？
     https://qiita.com/rtok/items/46eadbf7b0b7a1b0eb08
+
+# test
+
+- {テスト対象ファイル_test.go}でテスト用ファイルを作成する
+- func名はTestで始まらなければならない
+
+# testコマンド
+
+- `go test`：テスト実行
+- `go test -v`：詳細表示のテスト実行
+- `go test -cover`：テストのcoverageを表示
+- `go test -coverprofile=coverage.out && go tool cover -html=coverage.out`：テストcoverageの詳細を表示
