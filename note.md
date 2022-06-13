@@ -34,3 +34,7 @@
 - `go test -v`：詳細表示のテスト実行
 - `go test -cover`：テストのcoverageを表示
 - `go test -coverprofile=coverage.out && go tool cover -html=coverage.out`：テストcoverageの詳細を表示
+
+# print系の関数について
+
+https://qiita.com/taji-taji/items/77845ef744da7c88a6fe
