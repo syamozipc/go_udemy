@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 )
@@ -29,10 +30,31 @@ func main() {
 	// ブラウザで http://localhost:8080 にアクセスすると実行される
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
+	http.HandleFunc("/divide", Divide)
 
 	fmt.Printf("starting application on port %s", portNumber)
 
 	// serverを http://localhost:8080 に立ち上げる
 	// 引数を_にすることで、errorがreturnされた場合、それをスルーする
 	_ = http.ListenAndServe(portNumber, nil)
+}
+
+func Divide(w http.ResponseWriter, r *http.Request) {
+	f, err := DivideValues(100.0, 0.0)
+	if err != nil {
+		fmt.Fprintf(w, "cannot divide by zero")
+
+		return
+	}
+
+	fmt.Fprintf(w, "%f divided by %f is %f", 100.0, 0.0, f)
+}
+
+func DivideValues(x, y float32) (float32, error) {
+	if y <= 0 {
+		err := errors.New("cannot devide by zero")
+		return 0, err
+	}
+	result := x / y
+	return result, nil
 }
