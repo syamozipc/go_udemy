@@ -38,3 +38,12 @@
 # print系の関数について
 
 https://qiita.com/taji-taji/items/77845ef744da7c88a6fe
+
+# package
+
+- そのdirectory内でのみ、同名packageを認識できる？
+
+# コンパイルについて
+
+- importしない場合（別ファイルの同名packageなど）はいずれもコンパイルする必要がある
+- importする場合は、importする側でコンパイルすればok（JSのimportの感覚）
