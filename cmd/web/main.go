@@ -16,6 +16,7 @@ const portNumber = ":8080"
 // main application function
 func main() {
 	var app config.AppConfig
+	fmt.Println(app)
 
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
