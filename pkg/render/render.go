@@ -27,8 +27,11 @@ func RenderTemplate(w http.ResponseWriter, tmpl string) {
 func RenderTemplateTest(w http.ResponseWriter) (map[string]*template.Template, error) {
 
 	myCache := map[string]*template.Template{}
+	fmt.Print("1",myCache)
 
 	pages, err := filepath.Glob("./templates/*.page.tmpl")
+	fmt.Print("2",pages)
+
 	if err != nil {
 		return myCache, err
 	}
