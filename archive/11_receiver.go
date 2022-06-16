@@ -6,6 +6,7 @@ type myStruct struct {
 	FirstName string
 }
 
+// structのmethodとして機能する
 func (m *myStruct) printFirstName() string {
 	return m.FirstName
 }
