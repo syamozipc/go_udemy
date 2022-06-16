@@ -26,8 +26,7 @@ func main() {
 
 	// key, value
 	for animalType, animal := range animals {
-		// log.Println(i, animal)
-		log.Println(animalType, animal)
+		log.Println(animalType, animal) // 2009/11/10 23:00:00 dog fido, 2009/11/10 23:00:00 cat fluffy
 	}
 }
 
@@ -55,6 +54,6 @@ func main() {
 
 	// key, value
 	for _, l := range users {
-		log.Println(l.FirstName, l.LastName, l.Email, l.Age)
+		log.Println(l.FirstName, l.LastName, l.Email, l.Age)// 2009/11/10 23:00:00 ryota saito syamozipc@gmail.com 30, 2009/11/10 23:00:00 saaya morita saaya@gmail.com 26
 	}
 }
